@@ -3,11 +3,11 @@ package leetcode_hashmap;
 import java.util.HashMap;
 
 
-class Solution1 {
+class Solution01 {
     public int[] twoSum(int[] nums, int target) {
         if (nums == null || nums.length == 0) return new int[0];
 
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (!map.containsKey(target - nums[i])) {
                 map.put(nums[i], i);
@@ -32,11 +32,11 @@ class Solution1 {
     }
 }
 
-public class _1_TwoSum {
+public class _01_TwoSum {
     public static void main(String[] args) {
         int[] arr = {3, 3};
         int target = 6;
-        Solution1 slt = new Solution1();
+        Solution01 slt = new Solution01();
         int[] res = slt.twoSum(arr, target);
 
         for (int i : res) {

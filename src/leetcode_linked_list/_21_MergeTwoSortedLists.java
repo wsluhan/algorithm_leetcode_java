@@ -29,6 +29,8 @@ class Solution21 {
     }
 }
 
+// Time complexity: O(m+n)
+// Space complexity: O(1)
 public class _21_MergeTwoSortedLists {
 
     public static void main(String[] args) {

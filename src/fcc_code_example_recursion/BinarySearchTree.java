@@ -1,5 +1,5 @@
 /*
- * Code example from freeCodeCamp.org
+ * Code example from Ryan Schachte & freeCodeCamp.org
  * url = https://www.youtube.com/watch?v=IJDJ0kBx2LM
  * */
 

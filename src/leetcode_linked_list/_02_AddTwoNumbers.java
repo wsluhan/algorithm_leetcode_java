@@ -2,7 +2,7 @@ package leetcode_linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
-class Solution2 {
+class Solution02 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode pre = new ListNode();
         ListNode cur = pre;
@@ -26,7 +26,7 @@ class Solution2 {
     }
 }
 
-public class _2_AddTwoNumbers {
+public class _02_AddTwoNumbers {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(9);
         ListNode n2 = new ListNode(9);
@@ -53,7 +53,7 @@ public class _2_AddTwoNumbers {
         n3_2.setNext(n4_2);
 
 
-        Solution2 slt = new Solution2();
+        Solution02 slt = new Solution02();
         ListNode res = slt.addTwoNumbers(n1, n1_2);
         printLinkedList(res);
 

@@ -14,6 +14,9 @@ package leetcode_recursion;
 
 import fcc_code_example_recursion.ListNode;
 
+
+// time complexity: O(m+n)
+// space complexity: O(m+n)
 class Solution21 {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         // base case
