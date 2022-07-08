@@ -1,31 +1,18 @@
-package leetcode_linked_list;
+package leetcode_recursion;
 
 import fcc_code_example_recursion.ListNode;
 
-
-
-// Time complexity: O(N)
-// Space complexity: O(1)
 class Solution24 {
     public ListNode swapPairs(ListNode head) {
         if (head == null || head.next == null) return head;
 
-        ListNode dummy = new ListNode(-1, head);
-        ListNode cur = dummy;
-        while (head != null && head.next != null) {
+        ListNode temp1 = head;
+        ListNode temp2 = head.next;
+        temp1.next = swapPairs(temp2.next);
+        temp2.next = temp1;
 
-            ListNode temp1 = head;
-            ListNode temp2 = head.next;
+        return temp2;
 
-            cur.next = temp2;
-            temp1.next = temp2.next;
-            temp2.next = temp1;
-
-            cur = temp1;
-            head = temp1.next;
-        }
-
-        return dummy.next;
     }
 }
 
@@ -53,4 +40,5 @@ public class _24_SwapNodesPairs {
             temp = temp.getNext();
         }
     }
+
 }

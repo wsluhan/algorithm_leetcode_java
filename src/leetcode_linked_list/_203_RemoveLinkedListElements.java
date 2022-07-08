@@ -2,6 +2,8 @@ package leetcode_linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
+// Time complexity: O(N)
+// Space complexity: O(1)
 class Solution203 {
     public ListNode removeElements(ListNode head, int val) {
         if (head == null) return null;

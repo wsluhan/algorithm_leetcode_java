@@ -2,6 +2,9 @@ package leetcode_linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
+
+// Time complexity: O(M+N)
+// Space complexity: O(1)
 class Solution160 {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) return null;
