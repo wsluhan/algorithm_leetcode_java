@@ -1,5 +1,8 @@
 package leetcode_dynamic_programming;
 
+
+// Time complexity: O(N)
+// Space complexity: O(1)
 class Solution53 {
     public int maxSubArray(int[] nums) {
         if (nums.length == 1) return nums[0];
@@ -7,11 +10,7 @@ class Solution53 {
         int res = nums[0];
         int sum = 0;
         for (int i : nums) {
-            if (sum <= 0) {
-                sum = i;
-            } else {
-                sum += i;
-            }
+            sum = sum <= 0 ? i : sum + i;
             res = Math.max(sum, res);
         }
         return res;
