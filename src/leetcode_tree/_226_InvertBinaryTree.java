@@ -4,7 +4,7 @@ import fcc_code_example_recursion.TreeNode;
 
 import java.util.List;
 
-class Solution {
+class Solution226 {
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
         TreeNode temp = invertTree(root.left);
