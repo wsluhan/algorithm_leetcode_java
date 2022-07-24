@@ -2,25 +2,36 @@ package leetcode_linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
+// Time complexity : O(max(m,n))
+// Space complexity : O(max(m,n))
 class Solution02 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        // 1. build a new linked list, will return pre.next
         ListNode pre = new ListNode();
         ListNode cur = pre;
-        int plusOne = 0;
 
+        // 2. initialize carry to 0
+        int carry = 0;
+
+        // 3. go through two linked lists
         while (l1 != null || l2 != null) {
+            // 4. If they have different number of nodes, substitute with 0
             int val1 = l1 == null ? 0 : l1.val;
             int val2 = l2 == null ? 0 : l2.val;
-            int sum = val1 + val2 + plusOne;
-            cur.next = new ListNode(sum % 10);
-            plusOne = sum < 10 ? 0 : 1;
 
+            // 5. calculate the sum, create a Node as cur.next, and update carry
+            int sum = val1 + val2 + carry;
+            cur.next = new ListNode(sum % 10);
+            carry = sum / 10;
+
+            // 6. cur move forward, l1 and l2 move forward if they are not null
             cur = cur.next;
             if (l1 != null) l1 = l1.next;
             if (l2 != null) l2 = l2.next;
         }
 
-        if (plusOne == 1) cur.next = new ListNode(1);
+        // 7. don't forget if after looping l1 and l2, carry is 1, add a new Node(1)
+        if (carry == 1) cur.next = new ListNode(1);
 
         return pre.next;
     }

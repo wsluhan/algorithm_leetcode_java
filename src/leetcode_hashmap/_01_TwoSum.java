@@ -2,25 +2,30 @@ package leetcode_hashmap;
 
 import java.util.HashMap;
 
-
+// Time complexity: O(N)
+// Space complexity: O(N)
 class Solution01 {
     public int[] twoSum(int[] nums, int target) {
-        if (nums == null || nums.length == 0) return new int[0];
-
+        // 1. create a HasgMap
         HashMap<Integer, Integer> map = new HashMap<>();
+
+        // 2. A number is looking for (target - "itself") in the map
+        //    If not found, put itself and its index in the map
+        //    If found, return the index in the map, and its index
         for (int i = 0; i < nums.length; i++) {
-            if (!map.containsKey(target - nums[i])) {
+            int temp = target - nums[i];
+            if (!map.containsKey(temp)) {
                 map.put(nums[i], i);
             } else {
-                return new int[]{map.get(target - nums[i]), i};
+                return new int[]{map.get(temp), i};
             }
         }
-        return new int[0];
+
+        return null;
     }
 
     // brute force
-    public int[] twoSum2(int[] nums, int target) {
-        if (nums == null || nums.length == 0) return new int[0];
+/*    public int[] twoSum2(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
@@ -28,8 +33,8 @@ class Solution01 {
                 }
             }
         }
-        return new int[0];
-    }
+        return null;
+    }*/
 }
 
 public class _01_TwoSum {
